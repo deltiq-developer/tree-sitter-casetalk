@@ -1,0 +1,13 @@
+========
+Feitzinnen in CaseTalk
+========
+
+'Er is een persoon genaamd Roy Maassen.'
+"De woonplaats van Roy Maassen is Apeldoorn.", Tag
+'Dit is een single quote met een tag.', Tag
+'Een goede zin voor Casetalk (lc tag).' , tag
+'Een goede zin voor Casetalk (uc tag).' , Tag
+
+---
+
+(program (fact) (fact) (fact) (fact) (fact))
