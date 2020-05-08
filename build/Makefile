@@ -321,13 +321,13 @@ $(obj).$(TOOLSET)/%.o: $(obj)/%.s FORCE_DO_CMD
 
 ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
     $(findstring $(join ^,$(prefix)),\
-                 $(join ^,tree_sitter_quick_check_binding.target.mk)))),)
-  include tree_sitter_quick_check_binding.target.mk
+                 $(join ^,tree_sitter_CaseTalk_binding.target.mk)))),)
+  include tree_sitter_CaseTalk_binding.target.mk
 endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
-cmd_regen_makefile = cd $(srcdir); /Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py --format /Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/generator/make.pyc --ignore-environment "--toplevel-dir=." -I/Users/roy/Documents/programming/tree-sitter-casetalk/build/config.gypi -I/Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/addon.gypi -I/Users/roy/.atom/.node-gyp/.node-gyp/4.2.7/include/node/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/roy/.atom/.node-gyp/.node-gyp/4.2.7" "-Dnode_gyp_dir=/Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp" "-Dnode_lib_file=/Users/roy/.atom/.node-gyp/.node-gyp/4.2.7/<(target_arch)/node.lib" "-Dmodule_root_dir=/Users/roy/Documents/programming/tree-sitter-casetalk" "-Dnode_engine=v8" binding.gyp
-Makefile: $(srcdir)/../../../.atom/.node-gyp/.node-gyp/4.2.7/include/node/common.gypi $(srcdir)/../../../../../Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/node_modules/node-gyp/addon.gypi $(srcdir)/build/config.gypi $(srcdir)/binding.gyp
+cmd_regen_makefile = cd $(srcdir); /Users/roy/Documents/programming/tree-sitter-casetalk/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "--toplevel-dir=." -I/Users/roy/Documents/programming/tree-sitter-casetalk/build/config.gypi -I/Users/roy/Documents/programming/tree-sitter-casetalk/node_modules/node-gyp/addon.gypi -I/Users/roy/.node-gyp/11.14.0/include/node/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/roy/.node-gyp/11.14.0" "-Dnode_gyp_dir=/Users/roy/Documents/programming/tree-sitter-casetalk/node_modules/node-gyp" "-Dnode_lib_file=/Users/roy/.node-gyp/11.14.0/<(target_arch)/node.lib" "-Dmodule_root_dir=/Users/roy/Documents/programming/tree-sitter-casetalk" "-Dnode_engine=v8" binding.gyp
+Makefile: $(srcdir)/../../../.node-gyp/11.14.0/include/node/common.gypi $(srcdir)/node_modules/node-gyp/addon.gypi $(srcdir)/build/config.gypi $(srcdir)/binding.gyp
 	$(call do_cmd,regen_makefile)
 
 # "all" is a concatenation of the "all" targets from all the included

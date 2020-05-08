@@ -3,4 +3,4 @@
 export builddir_name ?= ./build/.
 .PHONY: all
 all:
-	$(MAKE) tree_sitter_quick_check_binding
+	$(MAKE) tree_sitter_CaseTalk_binding
