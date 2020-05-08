@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "This package enables syntax highlighting for the CaseTalk expression files.",
   "main": "index.js",
-  "repository": null,
+  "repository": "https://github.com/deltiq-developer/tree-sitter-casetalk",
   "author": "Roy Maassen",
   "license": "MIT",
   "devDependencies": {
