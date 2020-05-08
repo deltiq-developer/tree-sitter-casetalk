@@ -1,0 +1,15 @@
+{
+  "name": "tree-sitter-casetalk",
+  "version": "0.0.1",
+  "description": "This package enables syntax highlighting for the CaseTalk expression files.",
+  "main": "index.js",
+  "repository": null,
+  "author": "Roy Maassen",
+  "license": "MIT",
+  "devDependencies": {
+    "tree-sitter-cli": "^0.13.5"
+  },
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp build"
+  }
+}

@@ -1,0 +1,10 @@
+========
+Commentaar binnen CaseTalk
+========
+
+; Commentaar
+   ; Commentaar
+
+---
+
+(program (comment) (comment))
