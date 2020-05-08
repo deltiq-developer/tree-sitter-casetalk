@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-casetalk",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "CaseTalk grammar for tree-sitter.",
   "main": "index.js",
   "repository": "https://github.com/deltiq-developer/tree-sitter-casetalk",
