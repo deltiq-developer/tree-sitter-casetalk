@@ -7,6 +7,7 @@ module.exports = grammar({
       $.comment,
       $.header,
       $.fact,
+      $.tag,
     )),
 
     header: $ => token(seq('[',/.*/,']')),
@@ -14,14 +15,8 @@ module.exports = grammar({
     fact: $ => token(seq (
       choice("'", '"'),
       /.*/,
-      choice("'", '"'),
-      optional(seq(
-        /\s*/,
-        ',',
-        /\s*/,
-        /(Tag|tag){1}/
-      )),
+      choice("'", '"')
     )),
-
+    tag: $ => /Tag|tag/
   }
 })

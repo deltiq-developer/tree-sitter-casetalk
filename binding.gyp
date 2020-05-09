@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "tree_sitter_quick_check_binding",
+      "target_name": "tree_sitter_CaseTalk_binding",
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
         "src"

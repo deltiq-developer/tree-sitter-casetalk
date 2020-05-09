@@ -1,15 +1,18 @@
 {
   "name": "tree-sitter-casetalk",
-  "version": "0.0.1",
-  "description": "This package enables syntax highlighting for the CaseTalk expression files.",
+  "version": "0.0.5",
+  "description": "CaseTalk grammar for tree-sitter.",
   "main": "index.js",
   "repository": "https://github.com/deltiq-developer/tree-sitter-casetalk",
-  "author": "Roy Maassen",
+  "author": "Roy Maassen <roy.maassen@deltiq.com>",
   "license": "MIT",
+  "dependencies": {
+    "nan": "^2.14.0"
+  },
   "devDependencies": {
-    "tree-sitter-cli": "^0.13.5"
+    "tree-sitter-cli": "^0.16.5"
   },
   "scripts": {
-    "build": "tree-sitter generate && node-gyp build"
+    "build": "tree-sitter generate && node-gyp configure"
   }
 }
