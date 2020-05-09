@@ -18,6 +18,10 @@
         {
           "type": "header",
           "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
         }
       ]
     }
@@ -32,6 +36,10 @@
   },
   {
     "type": "header",
+    "named": true
+  },
+  {
+    "type": "tag",
     "named": true
   }
 ]

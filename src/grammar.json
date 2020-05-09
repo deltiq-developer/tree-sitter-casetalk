@@ -17,6 +17,10 @@
           {
             "type": "SYMBOL",
             "name": "fact"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "tag"
           }
         ]
       }
@@ -91,38 +95,13 @@
                 "value": "\""
               }
             ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "PATTERN",
-                    "value": "\\s*"
-                  },
-                  {
-                    "type": "STRING",
-                    "value": ","
-                  },
-                  {
-                    "type": "PATTERN",
-                    "value": "\\s*"
-                  },
-                  {
-                    "type": "PATTERN",
-                    "value": "(Tag|tag){1}"
-                  }
-                ]
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
           }
         ]
       }
+    },
+    "tag": {
+      "type": "PATTERN",
+      "value": "Tag|tag"
     }
   },
   "extras": [

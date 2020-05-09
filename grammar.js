@@ -1,3 +1,6 @@
+// Compile: tree-sitter generate; node-gyp configure; node-gyp build; tree-sitter test;
+// Publish: npm publish
+
 module.exports = grammar({
   name: "CaseTalk",
 
@@ -7,16 +10,21 @@ module.exports = grammar({
       $.comment,
       $.header,
       $.fact,
-      $.tag,
     )),
 
     header: $ => token(seq('[',/.*/,']')),
     comment: $ => token(seq(';', /.*/)),
+
+    // Supporting elements:
+    tag: $ => token(seq(',',/\s*/,/Tag|tag/)),
+    quote: $ => choice("'", '"'),
+
     fact: $ => token(seq (
-      choice("'", '"'),
+      $.quote,
       /.*/,
-      choice("'", '"')
+      $.quote,
+      optional($.tag),
     )),
-    tag: $ => /Tag|tag/
+
   }
 })
