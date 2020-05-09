@@ -17,10 +17,6 @@
           {
             "type": "SYMBOL",
             "name": "fact"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "tag"
           }
         ]
       }
@@ -61,43 +57,62 @@
         ]
       }
     },
+    "content": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "\\'|\\\""
+          },
+          {
+            "type": "PATTERN",
+            "value": "[^\\'\\\"]+"
+          },
+          {
+            "type": "PATTERN",
+            "value": "\\'|\\\""
+          }
+        ]
+      }
+    },
     "fact": {
       "type": "TOKEN",
       "content": {
         "type": "SEQ",
         "members": [
           {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "'"
-              },
-              {
-                "type": "STRING",
-                "value": "\""
-              }
-            ]
-          },
-          {
-            "type": "PATTERN",
-            "value": ".*"
+            "type": "SYMBOL",
+            "name": "content"
           },
           {
             "type": "CHOICE",
             "members": [
               {
-                "type": "STRING",
-                "value": "'"
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "comma"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "tag"
+                  }
+                ]
               },
               {
-                "type": "STRING",
-                "value": "\""
+                "type": "BLANK"
               }
             ]
           }
         ]
       }
+    },
+    "comma": {
+      "type": "PATTERN",
+      "value": "[[:space:]]+,[[:space:]]+"
     },
     "tag": {
       "type": "PATTERN",

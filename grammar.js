@@ -9,22 +9,25 @@ module.exports = grammar({
     program: $ => repeat(choice(
       $.comment,
       $.header,
-      $.fact,
+      $.fact
     )),
+
+    extras: $ => [
+      $.comment,
+      /[\s\f\uFEFF\u2060\u200B]|\\\r?\n/
+    ],
 
     header: $ => token(seq('[',/.*/,']')),
     comment: $ => token(seq(';', /.*/)),
 
     // Supporting elements:
-    tag: $ => token(seq(',',/\s*/,/Tag|tag/)),
-    quote: $ => choice("'", '"'),
-
-    fact: $ => token(seq (
-      $.quote,
-      /.*/,
-      $.quote,
-      optional($.tag),
+    content: $ => token(seq(/\'|\"/,/[^\'\"]*/,/\'|\"/)),
+    fact: $ => token(seq(
+      $.content,
+      optional($.tag)),
     )),
+
+    tag: $ => token(/(\s)*(, ){1}(Tag|tag){1}/),
 
   }
 })

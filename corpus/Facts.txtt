@@ -2,12 +2,11 @@
 Feitzinnen in CaseTalk
 ========
 
-'Er is een persoon genaamd Roy Maassen.'
-"De woonplaats van Roy Maassen is Apeldoorn."
-'Dit is een single quote met een tag.'
-'Een goede zin voor Casetalk (lc tag).'
-'Een goede zin voor Casetalk (uc tag).'
+'Apen zijn zoogdieren.'
+"Apen leven in het regenwoud."
+'Dit is een single quote met een tag.', Tag
+'Een goede zin voor Casetalk (lc tag).', tag
+'Een goede zin voor Casetalk (uc tag).', tag
 
 ---
-
-(program (fact) (fact) (fact) (fact) (fact))
+(program (fact (content)) (fact (content)) (fact (content) (tag)) (fact (content) (tag)) (fact (content) (tag)))
